@@ -15,6 +15,7 @@
 -- Dumping structure for table qbus.osmreferral
 CREATE TABLE IF NOT EXISTS `osmplaytime` (
   `steam` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
   `mins` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
