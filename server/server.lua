@@ -8,13 +8,14 @@ AddEventHandler('osm-playtime:Server:MainTrigger', function()
   local Player = QBCore.Functions.GetPlayer(src)
   local steam = Player.PlayerData.steam
   local cid = Player.PlayerData.citizenid
+  local name = Player.PlayerData.name		
   if steam ~= nil and Player ~= nil then 
     exports['ghmattimysql']:execute('SELECT * FROM osmplaytime WHERE steam = @steam', {['@steam'] = steam}, function(result)
       if result[1] ~= nil then
         local newmins = (result[1].mins) + 2
         QBCore.Functions.ExecuteSql(false, "UPDATE `osmplaytime` SET mins = '"..newmins.."' WHERE `steam` = '"..steam.."'")
       else
-        QBCore.Functions.ExecuteSql(true, "INSERT INTO `osmplaytime` (`steam`, `mins`) VALUES ('"..steam.."', 2)")
+        QBCore.Functions.ExecuteSql(true, "INSERT INTO `osmplaytime` (`steam`, `name`, `mins`) VALUES ('"..steam.."','"..name.."', 2)")
       end
     end)
   end
