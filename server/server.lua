@@ -37,7 +37,7 @@ QBCore.Commands.Add("playtime", "Check your Playtime", {}, false, function(src, 
 
           val = val - (hrs  * 60)
 
-          str = days..' Days, '..hrs..' Hours, and '..mins
+          str = days..' Days, '..hrs..' Hours, and '..val
 
           TriggerClientEvent('chatMessage', src, "PLAYTIME", "normal" , str)
         end
@@ -67,9 +67,9 @@ QBCore.Commands.Add("playtimelb", "Leaderboard for Playtime", {}, false, functio
 
           val = val - (hrs  * 60)
 
-          str = days..' Days, '..hrs..' Hours, and '..mins
+          str = days..' Days, '..hrs..' Hours, and '..val
 
-        lboard = ''..lboard..''..k..'. '..v.name..' - '..days..' Days, '..hrs..' Hours, and '..mins..'<br>'
+        lboard = ''..lboard..''..k..'. '..v.name..' - '..days..' Days, '..hrs..' Hours, and '..val..'<br>'
       end
     end
     Citizen.Wait(100)
@@ -93,7 +93,7 @@ QBCore.Commands.Add("playtimeid", "Check a User's Playtime", {{name="id", help="
 
           val = val - (hrs  * 60)
 
-          str = days..' Days, '..hrs..' Hours, and '..mins
+          str = days..' Days, '..hrs..' Hours, and '..val
 
           TriggerClientEvent('chatMessage', src, "PLAYTIME of ID "..tonumber(args[1]), "normal" , str)
         end
