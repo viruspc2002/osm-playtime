@@ -99,7 +99,7 @@ QBCore.Commands.Add("playtimeid", "Check a User's Playtime", {{name="id", help="
         end
       end)
     else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Player is not online!")
+			TriggerClientEvent('chatMessage', src, "SYSTEM", "error", "Player is not online!")
 		end
 end, 'admin')
 
