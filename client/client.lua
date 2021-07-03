@@ -28,7 +28,7 @@ AddEventHandler('osm-playtime:Main', function()
             Citizen.Wait(120000)
             TriggerServerEvent('osm-playtime:Server:MainTrigger')
         else
-            break
+            Citizen.Wait(120000)
         end
     end
 end)
